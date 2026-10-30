@@ -4,7 +4,14 @@ import { useApp } from '../store.jsx'
 import { useI18n, categoryLabel, quickSetLabel } from '../i18n.js'
 import RecipeCard from '../components/RecipeCard.jsx'
 import Reveal from '../components/Reveal.jsx'
-import { IconSearch, IconCheck, IconX } from '../components/icons.jsx'
+import FridgeScanner from '../components/FridgeScanner.jsx'
+import { IconSearch, IconCheck, IconX, IconCamera } from '../components/icons.jsx'
+
+const SCAN_LABEL = {
+  en: ['Scan products', 'Snap your fridge — AI picks the ingredients'],
+  ru: ['Сканировать продукты', 'Сфоткайте холодильник — ИИ сам отметит продукты'],
+  kk: ['Өнімдерді сканерлеу', 'Тоңазытқышты түсіріңіз — ЖИ өнімдерді белгілейді'],
+}
 
 const TIME_FILTERS = [
   { v: null, labelKey: 'timeAny' },
@@ -25,6 +32,7 @@ export default function Kitchen() {
   const [tag, setTag] = useState('')
 
   const [results, setResults] = useState(null)
+  const [scanOpen, setScanOpen] = useState(false)
   const [loading, setLoading] = useState(false)
   const resultsRef = useRef(null)
   const firstLoad = useRef(true)
@@ -113,6 +121,15 @@ export default function Kitchen() {
       <div className="kitchen-grid">
         {/* ----- picker ----- */}
         <aside className="picker" aria-label="Ingredient picker">
+          <button type="button" className="scan-btn" onClick={() => setScanOpen(true)}>
+            <span className="scan-btn-icon" aria-hidden="true"><IconCamera size={20} /></span>
+            <span className="scan-btn-text">
+              <strong>{SCAN_LABEL[lang]?.[0] || SCAN_LABEL.en[0]}</strong>
+              <small>{SCAN_LABEL[lang]?.[1] || SCAN_LABEL.en[1]}</small>
+            </span>
+            <span className="scan-badge">AI</span>
+          </button>
+
           <div className="picker-search">
             <IconSearch size={16} />
             <input
@@ -279,6 +296,20 @@ export default function Kitchen() {
           )}
         </section>
       </div>
+
+      {scanOpen && (
+        <FridgeScanner
+          lang={lang}
+          ingredients={data?.ingredients || []}
+          nameFor={nameFor}
+          onClose={() => setScanOpen(false)}
+          onApply={(ids, msg) => {
+            addPantry(ids)
+            toast(msg)
+            setTimeout(() => resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 350)
+          }}
+        />
+      )}
 
       {/* mobile sticky action bar — the explicit "next step" testers asked for */}
       <div className={`kbar ${selected > 0 ? 'show' : ''}`}>
