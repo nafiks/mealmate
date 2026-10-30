@@ -1,0 +1,11 @@
+# Render.com blueprint — free hosting without Railway.
+# Deploy: render.com → New + → Blueprint → pick nafiks/mealmate → Apply.
+services:
+  - type: web
+    name: mealmate
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
