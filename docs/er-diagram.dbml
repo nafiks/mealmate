@@ -1,0 +1,82 @@
+// MealMate ER diagram — editable source.
+// Open at https://dbdiagram.io → New Diagram → paste this file → the diagram renders.
+// Mirrors server/schema.sql 1:1 (7 core entities + 2 support tables).
+
+Table users {
+  user_id integer [pk, increment]
+  name varchar [not null, default: 'Guest']
+  email varchar [unique, note: 'business rule: unique email']
+  password_hash varchar [note: 'scrypt + per-user salt']
+  is_guest integer [not null, default: 0]
+  created_at timestamp [default: `now()`]
+}
+
+Table ingredients {
+  ingredient_id integer [pk, increment]
+  name varchar [not null, unique]
+  name_ru varchar [note: 'i18n: Russian display name']
+  name_kk varchar [note: 'i18n: Kazakh display name']
+  emoji varchar [not null]
+  category varchar [not null]
+  is_staple integer [not null, default: 0, note: 'salt/oil/sugar — never "missing"']
+}
+
+Table recipes {
+  recipe_id integer [pk, increment]
+  title varchar [not null]
+  title_ru varchar
+  title_kk varchar
+  description text [not null]
+  description_ru text
+  description_kk text
+  cuisine varchar [not null]
+  time_min integer [not null]
+  servings integer [default: 2]
+  kcal integer
+  protein real
+  fat real
+  carbs real
+  image_url text
+  tags varchar [note: 'JSON array']
+  featured integer [default: 0]
+  created_at timestamp [default: `now()`]
+}
+
+Table recipe_ingredients {
+  recipe_id integer [pk, ref: > recipes.recipe_id]
+  ingredient_id integer [pk, ref: > ingredients.ingredient_id]
+  quantity varchar
+  unit varchar
+  optional integer [default: 0]
+}
+
+Table user_ingredients {
+  user_id integer [pk, ref: > users.user_id]
+  ingredient_id integer [pk, ref: > ingredients.ingredient_id]
+}
+
+Table instruction_blocks {
+  instruction_id integer [pk, increment]
+  recipe_id integer [not null, ref: > recipes.recipe_id]
+  step_number integer [not null, note: 'unique within a recipe']
+  description text [not null]
+  description_ru text
+  description_kk text
+}
+
+Table photo_diary {
+  photo_id integer [pk, increment]
+  user_id integer [not null, ref: > users.user_id]
+  recipe_id integer [ref: > recipes.recipe_id]
+  photo_url text [not null, note: 'client-compressed JPEG data URL']
+  note varchar
+  uploaded_at timestamp [default: `now()`]
+}
+
+Table reset_tokens {
+  id integer [pk, increment]
+  user_id integer [not null, ref: > users.user_id]
+  token_hash varchar [not null, note: 'SHA-256 of the one-time token']
+  expires_at integer [note: 'unix ms, 30 min window']
+  used integer [default: 0]
+}
