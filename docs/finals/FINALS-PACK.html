@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MealMate — Finals Pack · ICT Digital Start 2026</title>
+<style>
+  :root { --dark:#0D1F15; --green:#2C6A44; --lime:#C9E265; --paper:#F6F1E7;
+          --text:#182B1F; --muted:#7E897D; --tomato:#D9482B; }
+  * { box-sizing:border-box; margin:0; }
+  body { font-family:'Segoe UI',Arial,sans-serif; color:var(--text); background:var(--paper);
+         font-size:16px; line-height:1.55; padding:18px; max-width:900px; margin:0 auto; }
+  h1 { font-family:Georgia,serif; font-size:30px; color:var(--dark); margin:6px 0 4px; }
+  h2 { font-family:Georgia,serif; font-size:22px; color:var(--dark); margin:34px 0 10px;
+       padding-top:14px; border-top:2px solid var(--dark); page-break-before:always; }
+  h2:first-of-type { page-break-before:auto; }
+  h3 { font-size:17px; color:var(--green); margin:16px 0 6px; }
+  p, li { margin:6px 0; }
+  .kicker { font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase;
+            color:var(--green); }
+  .cover { background:var(--dark); color:#F6F1E7; border-radius:14px; padding:26px 22px;
+           margin-bottom:10px; }
+  .cover h1 { color:#fff; }
+  .cover em { color:var(--lime); font-style:italic; }
+  .cover .lime { color:var(--lime); font-weight:700; }
+  table { width:100%; border-collapse:collapse; margin:10px 0 16px; background:#fff; }
+  th, td { border:1px solid #D9D2C0; padding:8px 10px; text-align:left; vertical-align:top; }
+  th { background:var(--dark); color:#F6F1E7; font-size:14px; }
+  tr:nth-child(even) td { background:#F0EADC; }
+  .speech { background:#fff; border:1px solid #D9D2C0; border-radius:12px; padding:14px 16px;
+            margin:10px 0 22px; }
+  .who { font-weight:800; color:var(--green); font-size:14px; }
+  .en { font-size:16.5px; }
+  .ru { color:var(--muted); font-size:14px; font-style:italic; margin-top:4px; }
+  .time { display:inline-block; background:var(--lime); color:var(--dark); font-weight:800;
+          border-radius:99px; padding:1px 10px; font-size:13px; }
+  ul { padding-left:20px; }
+  .num { font-family:Georgia,serif; font-size:22px; font-weight:bold; color:var(--green); }
+  .warn { background:#FAE8E1; border-left:4px solid var(--tomato); padding:10px 12px;
+          border-radius:6px; margin:10px 0; }
+  .ok { background:#E7EEDD; border-left:4px solid var(--green); padding:10px 12px;
+        border-radius:6px; margin:10px 0; }
+  .qa { margin:12px 0; }
+  .qa b.q { display:block; color:var(--dark); margin-bottom:3px; }
+  .small { font-size:13px; color:var(--muted); }
+  @media print { body { background:#fff; font-size:12.5px; } .cover { border-radius:0; } }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="kicker" style="color:var(--lime)">ICT DIGITAL START 2026 · FINALS · NOV 6 · OPEN SPACE · 14:45</div>
+  <h1>Meal<em>Mate</em> — Finals Pack</h1>
+  <p style="font-size:17px">Речь (2:00, EN) · Демо-скрипт · Шпаргалки каждого участника · Чек-лист дня.<br>
+  <span class="small" style="color:#B9C4B4">Файл открывается на телефоне в браузере; для печати — PDF-версия.</span></p>
+  <p style="margin-top:10px">CS-2618 · Samarin · Kaniyazov · Sadybek · Temirtas</p>
+</div>
+
+<h2>0 · Пять цифр, которые знает каждый</h2>
+<table>
+  <tr><th>Цифра</th><th>Что значит</th><th>Если спросят глубже</th></tr>
+  <tr><td class="num">76 kg</td><td>выброшенной еды на человека в год в Казахстане</td><td>UNEP Food Waste Index Report 2021, household fraction</td></tr>
+  <tr><td class="num">68 / 51 / 0</td><td>рецептов · ингредиентов в пикере · «мёртвых» ингредиентов (было 2)</td><td>аудит покрытия — Assignment 4, workbook с формулами</td></tr>
+  <tr><td class="num">3</td><td>языка: интерфейс, контент и шаги рецептов — EN/РУ/ҚАЗ</td><td>локализованные колонки в БД, API ?lang= с фолбэком на EN</td></tr>
+  <tr><td class="num">244</td><td>студента в опросе продовольственной безопасности (Алматы) — доказательство проблемы</td><td>исследование связало food security и well-being студентов</td></tr>
+  <tr><td class="num">3 → 3</td><td>UX-проблемы из тестирования → все исправлены</td><td>выбор ингредиентов, явный финиш, кнопка «назад»</td></tr>
+</table>
+
+<h2>1 · Team Speech — 2:00 (English)</h2>
+<p class="small">Говорить по-английски; русский перевод — чтобы понимать, ЧТО говоришь.
+Секвенция: Артур → Артур → Арсен → Адилет → Санжар → Артур.</p>
+
+<div class="speech">
+  <span class="time">0:00–0:20</span> <span class="who">Artur — Intro + Problem</span>
+  <p class="en">"Hello! We are Team MealMate from group CS-2618. Here is a number for you: <b>76 kilograms</b> — the food one person in Kazakhstan throws away every year, according to the UNEP Food Waste Index. The problem is that students living away from home struggle to decide what to cook from the random products in their fridge — so they waste food, waste money, and skip meals."</p>
+  <p class="ru">«Привет! Мы — команда MealMate, группа CS-2618. Цифра: 76 кг еды в год выбрасывает один человек в Казахстане — данные UNEP. Проблема: студенты не решают, что приготовить из случайных продуктов — еда и деньги на ветер».)</p>
+</div>
+
+<div class="speech">
+  <span class="time">0:20–0:45</span> <span class="who">Artur — Evidence</span>
+  <p class="en">"To confirm this is real, we studied the UNEP 2021 report and a food-security survey of <b>244 students</b> in Almaty — the link between food security and student well-being is proven. We also tested our prototype with real users: every single tester found a recipe with our matcher in under two minutes, and told us what to improve — and we did."</p>
+  <p class="ru">«Подтверждение: UNEP 2021 + опрос 244 студентов в Алматы. Свои тесты: каждый тестировщик нашёл рецепт меньше чем за 2 минуты — и мы исправили всё, что они отметили».)</p>
+</div>
+
+<div class="speech">
+  <span class="time">0:45–1:10</span> <span class="who">Arsen — Solution</span>
+  <p class="en">"Our solution is MealMate — a web app that matches recipes to the food you already have. You tick your ingredients, and it instantly splits <b>68 recipes</b> into 'cook right now' and 'almost there' — showing exactly what to buy. What makes it different: it is built for local kitchens — <b>Kazakh cuisine is first-class</b> — and it works in three languages: English, Russian and Kazakh."</p>
+  <p class="ru">«MealMate сопоставляет рецепты с тем, что есть. Отмечаешь продукты — 68 рецептов делятся на „готовить сейчас" и „почти готово" с точным списком покупок. Отличие: казахская кухня first-class, три языка».)</p>
+</div>
+
+<div class="speech">
+  <span class="time">1:10–1:30</span> <span class="who">Adilet — Technologies · затем Sanzhar</span>
+  <p class="en">"We built it with React, Node.js and SQLite because it runs in any browser with zero installation. Our database stores users, ingredients, recipes and a photo diary in seven tables — and the ingredient matching itself runs in SQL."</p>
+  <p class="ru">«React + Node + SQLite — работает в любом браузере без установки. В БД семь таблиц: пользователи, ингредиенты, рецепты, дневник; матчинг — в SQL».)</p>
+</div>
+
+<div class="speech">
+  <span class="time">1:30–1:50</span> <span class="who">Sanzhar — Security + Testing</span>
+  <p class="en">"…and we protect users by hashing passwords with scrypt, signing session cookies, and rate-limiting brute-force attacks. We tested the product with real users — three UX problems found, three fixed. And our database audit found two ingredients with zero recipes — we added ten recipes, and dead coverage dropped to zero."</p>
+  <p class="ru">«…защита: scrypt-хэши паролей, подписанные куки, рейт-лимит. Тестирование: три UX-проблемы — исправлены. Аудит БД: два ингредиента без рецептов — добавили десять, покрытие полное».)</p>
+</div>
+
+<div class="speech">
+  <span class="time">1:50–2:00</span> <span class="who">Artur — Plans + Handover</span>
+  <p class="en">"Next, we plan a fridge scanner with real computer vision — a working prototype is already in the app. Each of us owned a layer of this product. Now — let us show you how it works."</p>
+  <p class="ru">«Дальше — сканер холодильника с настоящим CV, прототип уже в приложении. У каждого своя часть. Показываем!»)</p>
+</div>
+
+<h2>2 · Live Demo — 2:00 (клик по клику)</h2>
+<p class="ok"><b>До прихода комиссии:</b> сайт https://mealmate-29tt.onrender.com уже открыт (главная),
+вторая вкладка — localhost:3001 (резерв), третья — dbdiagram.io с ER, ролик готов к проигрыванию.</p>
+
+<table>
+  <tr><th style="width:70px">Время</th><th>Действие</th><th>Что говорить</th></tr>
+  <tr><td>0:00</td><td>Home (открыта)</td><td>"This is MealMate — live, deployed, not a mock-up. Everything is real data from our database."</td></tr>
+  <tr><td>0:10</td><td>Start cooking → тик <b>Potato, Onion, Eggs</b></td><td>"I tick what I have — matches update instantly. Salt and oil are staples — already counted."</td></tr>
+  <tr><td>0:25</td><td>Показать два списка</td><td>"Cook right now: Crispy Fried Potatoes, 2 of 2. Almost there — with the exact missing items."</td></tr>
+  <tr><td>0:40</td><td>Open recipe → прокрутить шаги</td><td>"Detailed steps, KBJU per serving, every ingredient marked: green = have, red = buy."</td></tr>
+  <tr><td>1:00</td><td>ҚАЗ в хедере</td><td>"One click — full localization, including the cooking steps."</td></tr>
+  <tr><td>1:15</td><td>Scan products (баннер на /kitchen)</td><td>"Our newest feature: a fridge scanner. The camera is real; recognition is simulated — our honest next step." (честность = баллы)</td></tr>
+  <tr><td>1:35</td><td>Community</td><td>"Cooked dishes are shared with the whole university."</td></tr>
+  <tr><td>1:50</td><td>Закрытие</td><td>"Runs on a free deployment — the link is on our poster. Source code on GitHub. Questions?"</td></tr>
+</table>
+<div class="warn"><b>Если что-то сломалось:</b> Render висит → вкладка localhost:3001 (start-site.bat). Нет интернета вообще → ролик MealMate-promo.mp4 + рассказ по постеру. Камера в сканере не разрешена → "On a phone it works — the pipeline is the same" и закрыть модалку.</div>
+
+<h2>3 · CHEAT — Artur (Project Lead)</h2>
+<h3>Мои строки</h3>
+<p class="en">"76 kilograms per person per year — UNEP 2021." · "Every tester found a recipe in under two minutes." · "Next: a fridge scanner with real computer vision — a prototype is already live."</p>
+<h3>Ответы комиссии</h3>
+<div class="qa"><b class="q">How do you know the problem is real?</b>
+Three sources: UNEP Food Waste Index 2021 (76 kg/person/year, Kazakhstan); a 2021 study of 244 students across five Almaty universities linking food security to well-being; and our own tests — three external testers all completed the core task.</div>
+<div class="qa"><b class="q">What did YOU personally do?</b>
+I owned the problem: research, evidence, priorities, acceptance. After UX tests I pushed three concrete fixes — clearer ingredient selection, an explicit finish state, visible navigation. I kept scope honest: we cut features instead of claiming unfinished ones.</div>
+<div class="qa"><b class="q">How are you different from Supercook / Yummly?</b>
+Local cuisine first-class (beshbarmak, kuurdak, baursaki); the honest two-list result with exact missing items; full Kazakh and Russian interface. Global services barely cover any of this.</div>
+<div class="qa"><b class="q">Business side?</b>
+Today — a student project on free hosting. The pattern that can earn: delivery integration ("2 ingredients away from these dishes") and university partnerships for dorms. Honest: monetization is not built yet.</div>
+<div class="qa"><b class="q">Emergency</b>
+"Outside my layer — my teammate owns it, and we would verify with data first." · Demo breaks → backup tab localhost:3001, or the promo video.</div>
+
+<h2>4 · CHEAT — Arsen (Frontend)</h2>
+<h3>Мои строки</h3>
+<p class="en">"You tick your ingredients — it instantly splits 68 recipes into 'cook right now' and 'almost there'." · "Kazakh cuisine is first-class — and it works in three languages." · "The scanner camera is real; the AI recognition is simulated — our honest next step."</p>
+<h3>Ответы комиссии</h3>
+<div class="qa"><b class="q">What did YOU personally do?</b>
+The entire client layer: a hand-written CSS design system (no UI kit), all pages — picker with live matching, catalog, recipes, diary, community — and full trilingual localization including cooking steps. Plus the fixes our tests exposed: a pantry sync race, a quick-add bug, category overflow.</div>
+<div class="qa"><b class="q">Why React, not plain HTML or mobile?</b>
+The picker is one reactive state machine — ticking a chip must update matches instantly. Web over mobile because zero installation is our core requirement; a Capacitor wrapper would give app stores later without a rewrite.</div>
+<div class="qa"><b class="q">How does localization work?</b>
+Two layers. Content: localized DB columns (title_ru, name_kk, steps too) — the API picks with ?lang, English fallback. Interface: one shared dictionary. Units and phrases — "a pinch", "ас қасық" — localized separately.</div>
+<div class="qa"><b class="q">What is simulated or unfinished?</b>
+Honestly: scanner recognition is client-side simulated (camera and UI are real); guest diary photos reset on hosting restarts (ephemeral disk); password-reset emails are shown on screen — no mail service yet.</div>
+<div class="qa"><b class="q">How are images handled?</b>
+In the browser before upload: canvas downscale to 1280 px, JPEG quality 0.82 — a 5 MB phone photo becomes ~200 KB. Server re-validates format and size.</div>
+
+<h2>5 · CHEAT — Adilet (Database)</h2>
+<h3>Мои строки</h3>
+<p class="en">"We built it with React, Node.js and SQLite — zero installation." · "Seven tables — and the ingredient matching itself runs in SQL."</p>
+<h3>Ответы комиссии</h3>
+<div class="qa"><b class="q">Why SQLite and not PostgreSQL?</b>
+Honest engineering: our load is a university demo — SQLite gives real persistence with zero administration, and the driver is built into Node. All SQL sits behind one thin module (db.js), so moving to PostgreSQL means rewriting that one file. We already avoid SQLite-only features.</div>
+<div class="qa"><b class="q">Show the ER model. What would you change live?</b>
+Seven entities: users, ingredients, recipes, two M:N junctions, instruction blocks, photo diary — plus reset tokens. Live change example: add <b>servings_scale</b> to recipe_ingredients so users can cook for three instead of two — one column, no schema break. The editable source is docs/er-diagram.dbml — paste at dbdiagram.io.</div>
+<div class="qa"><b class="q">Where is the matching logic — DB or code?</b>
+In SQL. Two CTEs: req counts required ingredients per recipe (non-optional, non-staple); got counts the user's overlap. missing = total − have. Zero → "cook now", 1–2 → "almost there". Filters run in the same query.</div>
+<div class="qa"><b class="q">Relevance guarantee — what if I tick only bacon?</b>
+Two guards: have ≥ 1 — a recipe appears only if at least one required ingredient is selected; and with a tiny selection the "almost" threshold adapts — otherwise one bacon tick would hide carbonara because three items are missing.</div>
+<div class="qa"><b class="q">Data integrity?</b>
+FK with ON DELETE CASCADE; UNIQUE e-mail; UNIQUE (recipe_id, step_number); indexes on junctions and diary; parameterized queries only.</div>
+
+<h2>6 · CHEAT — Sanzhar (Backend & Security)</h2>
+<h3>Мои строки</h3>
+<p class="en">"…we protect users by hashing passwords with scrypt, signing session cookies, and rate-limiting brute-force attacks." · "Testing: three UX problems found, three fixed. Database audit: two ingredients with zero recipes — ten recipes added, coverage zero gaps."</p>
+<h3>Ответы комиссии</h3>
+<div class="qa"><b class="q">What did YOU personally do?</b>
+Every API endpoint — ingredients, matching, auth, pantry, diary, community feed. The security stack: scrypt hashing, HMAC-signed cookies, headers, rate limits, input validation. And the content pipeline: 68 recipes with nutrition and three-language steps, seeded into the database.</div>
+<div class="qa"><b class="q">How are passwords stored?</b>
+scrypt — a memory-hard KDF built into Node — with a unique random salt per user, compared with a timing-safe check. A database leak gives salted hashes; brute-forcing each costs heavy memory and time.</div>
+<div class="qa"><b class="q">Sessions without a login server?</b>
+Signed cookie: user id + expiry, HMAC-SHA256 with a server secret. httpOnly (JS cannot read it) + SameSite=Lax. Guests use the same mechanics with a guest row; registering upgrades that row — their pantry carries over.</div>
+<div class="qa"><b class="q">Demonstrate one security scenario.</b>
+Brute force: rapid wrong passwords at /api/auth/login — first forty get 401, request forty-one gets HTTP 429 for the rest of the window. scrypt makes each offline guess cost ~100 ms of CPU. Safe scenario: our own deployment, test account — no third-party systems touched.</div>
+<div class="qa"><b class="q">How did you use AI and verify it?</b>
+Disclosed in every assignment. AI wrote code, seed content and the coverage workbook. Verified by running: recipes reviewed against real cooking logic, endpoints tested with live requests, the Assignment-4 numbers come from database queries I can re-run here. Honest gaps — simulated scanner AI — are disclosed inside the product.</div>
+<div class="qa"><b class="q">What if the database leaks?</b>
+Worst case: usernames, e-mails, salted scrypt hashes and public recipe data. No plaintext passwords, no payment data. Sessions survive — they are signed with a server-side secret, not DB content.</div>
+
+<h2>7 · Checklist дня — 6 ноября</h2>
+<table>
+  <tr><th>Когда</th><th>Что</th></tr>
+  <tr><td>Сегодня вечером</td><td>Спич с таймером ×2 · демо на живом сайте от начала до конца · ноутбук на зарядку · шпаргалки распечатаны / скачаны на телефон</td></tr>
+  <tr><td>Утром</td><td>Проверить https://mealmate-29tt.onrender.com · проверить резерв: start-site.bat → localhost:3001 · ролик MealMate-promo.mp4 воспроизводится</td></tr>
+  <tr><td>На станции (до 14:45)</td><td>Ноутбук открыт на главной · вкладка 2: localhost:3001 · вкладка 3: dbdiagram.io с er-diagram.dbml · папка docs открыта · постер на столе</td></tr>
+  <tr><td>После защиты</td><td>Поблагодарить комиссию · сфотографировать постер · отметить фидбек для End-term</td></tr>
+</table>
+<p class="small">Файл: docs/finals (HTML + PDF). Источник истины по проекту: docs/DEFENSE.md · README.md. MealMate © CS-2618 — Samarin · Kaniyazov · Sadybek · Temirtas.</p>
+
+</body>
+</html>
